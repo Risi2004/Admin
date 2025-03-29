@@ -1,0 +1,38 @@
+body { font-family: 'Poppins', sans-serif; }
+
+        /* Sidebar styling */
+        #sidebar {
+            transition: width 0.3s ease, padding 0.3s ease;
+        }
+
+        /* Expanded and collapsed classes for sidebar */
+        .sidebar-collapsed {
+            width: 80px;
+            padding: 10px;
+        }
+
+        .sidebar-expanded {
+            width: 250px;
+            padding: 20px;
+        }
+
+        /* Adjusting the display of the sidebar components */
+        #sidebar .nav-item {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Hide text when collapsed */
+        .sidebar-collapsed .nav-item-text {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Main content adjustment */
+        .main-content {
+            transition: margin-left 0.3s ease;
+        }
+
+        /* Shift main content when sidebar is collapsed */
+        .sidebar-collapsed + .main-content {
+            margin-left: 80px;
+        }

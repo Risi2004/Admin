@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="admin1.css"> <!-- Link to the external CSS file -->
+</head>
+<body class="bg-gray-900 text-gray-200">
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar sidebar-expanded bg-gray-800 h-screen fixed top-0 left-0 flex flex-col">
+        <button id="toggleSidebar" class="mb-6 text-gray-400 hover:text-white">☰</button>
+        <nav>
+            <ul>
+                <li class="mb-4 nav-item">
+                    <a href="admin.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="appointments.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Appointments</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="users.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Users</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="services.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Services</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="payments.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Payments</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="reviews.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Reviews</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content ml-64 p-6">
+        <h1 class="text-3xl font-bold">Admin Dashboard</h1>
+        <p class="mt-2 text-gray-400">Manage appointments, users, and services efficiently.</p>
+        
+        <!-- Dashboard Cards -->
+        <div class="grid grid-cols-3 gap-6 mt-6">
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg text-center">
+                <h2 class="text-xl font-semibold">Total Appointments</h2>
+                <p class="text-3xl mt-2 font-bold text-green-400">120</p>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg text-center">
+                <h2 class="text-xl font-semibold">Registered Users</h2>
+                <p class="text-3xl mt-2 font-bold text-blue-400">85</p>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-lg shadow-lg text-center">
+                <h2 class="text-xl font-semibold">Total Revenue</h2>
+                <p class="text-3xl mt-2 font-bold text-yellow-400">$15,200</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin2.js"></script>
+</body>
+</html>

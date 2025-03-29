@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="admin1.css"> <!-- Link to the external CSS file -->
+</head>
+<body class="bg-gray-900 text-gray-200">
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar sidebar-expanded bg-gray-800 h-screen fixed top-0 left-0 flex flex-col">
+        <button id="toggleSidebar" class="mb-6 text-gray-400 hover:text-white">☰</button>
+        <nav>
+            <ul>
+                <li class="mb-4 nav-item">
+                    <a href="admin.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="appointments.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Appointments</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="users.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Users</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="services.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Services</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="payments.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Payments</span>
+                    </a>
+                </li>
+                <li class="mb-4 nav-item">
+                    <a href="reviews.html" class="block py-2 px-4 hover:bg-gray-700 rounded">
+                        <span class="nav-item-text">Reviews</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content ml-64 p-6">
+        <h1 class="text-3xl font-bold">Services</h1>
+        <p class="mt-2 text-gray-400">Manage and edit services available to clients.</p>
+
+        <!-- Services Section -->
+<section id="services" class="py-16 text-center bg-grey">
+    <div class="flex justify-center space-x-6 mt-10">
+        <!-- Existing Services -->
+        <div class="w-64 p-6 bg-pink-100 rounded-lg shadow-md hover:scale-105 transition relative">
+            <img src="Facial.jpg" alt="Facials" class="w-full h-40 object-cover rounded">
+            <h3 class="text-xl font-semibold mt-3">Facials</h3>
+            <p class="text-gray-600">Deep Cleansing & Anti-Aging</p>
+            <!-- Edit and Delete Buttons -->
+            <div class="mt-4 flex justify-between">
+                <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600">Edit</button>
+                <button class="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600">Delete</button>
+            </div>
+        </div>
+        <div class="w-64 p-6 bg-pink-100 rounded-lg shadow-md hover:scale-105 transition relative">
+            <img src="hair.jpg" alt="Haircuts" class="w-full h-40 object-cover rounded">
+            <h3 class="text-xl font-semibold mt-3">Haircuts</h3>
+            <p class="text-gray-600">Bob Cut & Layered Cut</p>
+            <!-- Edit and Delete Buttons -->
+            <div class="mt-4 flex justify-between">
+                <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600">Edit</button>
+                <button class="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600">Delete</button>
+            </div>
+        </div>
+        <div class="w-64 p-6 bg-pink-100 rounded-lg shadow-md hover:scale-105 transition relative">
+            <img src="nailart.jpg" alt="Nail Treatments" class="w-full h-40 object-cover rounded">
+            <h3 class="text-xl font-semibold mt-3">Nail Art</h3>
+            <p class="text-gray-600">Gel Manicure & Nail Art</p>
+            <!-- Edit and Delete Buttons -->
+            <div class="mt-4 flex justify-between">
+                <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600">Edit</button>
+                <button class="bg-red-500 text-white py-1 px-4 rounded hover:bg-red-600">Delete</button>
+            </div>
+        </div>
+
+        <!-- Add New Service -->
+        <div class="w-64 p-6 bg-gray-200 rounded-lg shadow-md hover:scale-105 transition cursor-pointer flex flex-col items-center justify-center" onclick="openModal()">
+            <span class="text-4xl text-gray-600">+</span>
+            <h3 class="text-xl font-semibold mt-3 text-gray-600">Add New Service</h3>
+        </div>        
+    </div>
+</section>
+
+    <!-- Modal Background -->
+<div id="addServiceModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">Add New Service</h2>
+
+        <!-- Service Name Input -->
+        <input type="text" id="serviceName" placeholder="Service Name" 
+               class="w-full px-3 py-2 border rounded-lg mb-3">
+
+        <!-- Description Input -->
+        <input type="text" id="serviceDescription" placeholder="Description" 
+               class="w-full px-3 py-2 border rounded-lg mb-3">
+
+        <!-- Image Input -->
+        <input type="file" id="serviceImage" class="w-full px-3 py-2 border rounded-lg mb-3">
+
+        <!-- Buttons -->
+        <div class="flex justify-end">
+            <button onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded-lg mr-2">Cancel</button>
+            <button onclick="saveService()" class="bg-green-500 text-white px-4 py-2 rounded-lg">Save</button>
+        </div>
+    </div>
+</div>
+
+    </div>
+        <script src="service1.js"></script>
+        <script src="admin2.js"></script> <!-- Link to the external JavaScript file -->
+        <script src="service.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
